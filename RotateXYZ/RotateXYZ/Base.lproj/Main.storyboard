@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MRW-aM-fpT" customClass="OpenGLView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fF1-Ha-w3i">
+                                <rect key="frame" x="0.0" y="425" width="320" height="143"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="俯仰角" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfZ-YW-e87">
+                                        <rect key="frame" x="14" y="8" width="61" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="航向角" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2E-4C-djh">
+                                        <rect key="frame" x="14" y="44" width="61" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="滚转角" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmB-Ln-JRP">
+                                        <rect key="frame" x="14" y="80" width="61" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-180" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-5X-0v1">
+                                        <rect key="frame" x="101" y="4" width="118" height="31"/>
+                                        <connections>
+                                            <action selector="rotateXSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Qlc-w8-4H0"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-180" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="RCF-d7-CWd">
+                                        <rect key="frame" x="101" y="42" width="118" height="31"/>
+                                        <connections>
+                                            <action selector="rotateYSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="fqk-Xa-Gi4"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-180" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="zcA-aR-jhJ">
+                                        <rect key="frame" x="101" y="80" width="118" height="31"/>
+                                        <connections>
+                                            <action selector="rotateZSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4M6-v9-UfF"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AutoScroll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75n-bl-vRB">
+                                        <rect key="frame" x="8" y="112" width="87" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2W5-lg-8cC">
+                                        <rect key="frame" x="142" y="112" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="controlScroll:" destination="BYZ-38-t0r" eventType="valueChanged" id="EwZ-FL-RD6"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.9854752095" blue="0.19295083909999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="143" id="KhH-Lb-vM3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fF1-Ha-w3i" secondAttribute="trailing" id="5Cp-TR-VEj"/>
+                            <constraint firstItem="fF1-Ha-w3i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dns-p1-KlK"/>
+                            <constraint firstItem="MRW-aM-fpT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FQW-lO-Fod"/>
+                            <constraint firstItem="MRW-aM-fpT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gxu-Wd-msf"/>
+                            <constraint firstItem="fF1-Ha-w3i" firstAttribute="top" secondItem="MRW-aM-fpT" secondAttribute="bottom" id="TfM-bj-xg5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fF1-Ha-w3i" secondAttribute="bottom" id="W8n-Vd-g65"/>
+                            <constraint firstAttribute="trailing" secondItem="MRW-aM-fpT" secondAttribute="trailing" id="xRo-oy-5BA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="controlView" destination="fF1-Ha-w3i" id="DuR-ak-rKK"/>
+                        <outlet property="openGLView" destination="MRW-aM-fpT" id="BpE-0H-G06"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="321"/>
+        </scene>
+    </scenes>
+</document>
